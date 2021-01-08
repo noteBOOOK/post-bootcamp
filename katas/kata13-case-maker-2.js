@@ -83,12 +83,8 @@ const lowerCase = input => {
 
 
 
-
-
-
-
 const makeCase = (input, inputCase) => {
-  let result = "";
+  let result = input;
   // Priority of cases
   const priority = {
     first: ["camel", "pascal", "snake", "kebab", "title"],
@@ -114,8 +110,51 @@ const makeCase = (input, inputCase) => {
       order.third.push(i);
     }
   }
-  console.log(order);
+
+  for (let precedent in order) {
+    order[precedent].forEach((c) => {
+      switch(c){
+        case "camel":
+          result = camelCase(result);
+          break;
+        case "pascal":
+          result = pascalCase(result);
+          break;
+        case "snake":
+          result = snakeCase(result);
+          break;
+        case "kebab":
+          result = kebabCase(result);
+          break;
+        case "title":
+          result = titleCase(result);
+          break;
+        case "vowel":
+          result = vowelCase(result);
+          break;
+        case "consonant":
+          result = consonantCase(result);
+          break;
+        case "upper":
+          result = upperCase(result);
+          break;
+        case "lower":
+          result = lowerCase(result);
+          break;
+        default:
+          result = result;
+      }
+    })
+  }
+
+  return result;
 }
 
-// makeCase("this is a string", ["camel", "snake", "upper", "vowel", "lower", "consonant", "title"]);
-
+console.log(makeCase("this is a string", "camel"));
+console.log(makeCase("this is a string", "pascal"));
+console.log(makeCase("this is a string", "snake"));
+console.log(makeCase("this is a string", "kebab"));
+console.log(makeCase("this is a string", "title"));
+console.log(makeCase("this is a string", "vowel"));
+console.log(makeCase("this is a string", "consonant"));
+console.log(makeCase("this is a string", ["upper", "snake"]));
