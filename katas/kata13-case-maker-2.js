@@ -22,7 +22,6 @@ const pascalCase = function(input) {
       result += input[i];
     }
   }
-
   return result.replace(result[0], result[0].toUpperCase())
 }
 
@@ -44,11 +43,40 @@ const titleCase = input => {
       result += input[i];
     }
   }
-
   return result.replace(result[0], result[0].toUpperCase());
 }
 
-console.log(titleCase("this is a string"));
+const vowelCase = input => {
+  const vowels = ["a", "e", "i", "o", "u"];
+  let result = "";
+  for (let i of input) {
+    if (vowels.includes(i)) {
+      result += i.toUpperCase();
+    } else {
+      result += i;
+    }
+  }
+  return result;
+}
+
+const consonantCase = input => {
+  const vowels = ["a", "e", "i", "o", "u"];
+  let result = "";
+  for (let i of input) {
+    if (!vowels.includes(i)) {
+      result += i.toUpperCase();
+    } else {
+      result += i;
+    }
+  }
+  return result;
+}
+
+console.log(consonantCase("this is a string"));
+
+
+
+
 
 
 
