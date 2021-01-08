@@ -12,6 +12,22 @@ const camelCase = function(input) {
   return result;
 }
 
+const pascalCase = function(input) {
+  let result = "";
+  for (let i = 0; i < input.length; i++){
+    if (input[i] === " "){
+      result += input[i+1].toUpperCase();
+      i++;
+    } else if (input[i] !== " "){
+      result += input[i];
+    }
+  }
+
+  return result.replace(result[0], result[0].toUpperCase())
+}
+
+console.log(pascalCase("this is a string"));
+
 const makeCase = (input, inputCase) => {
   let result = "";
   // Priority of cases
@@ -28,6 +44,7 @@ const makeCase = (input, inputCase) => {
   };
   // Set inputCase as an array if not already
   Array.isArray(inputCase) === true ? parsedInputCase = inputCase : parsedInputCase = [inputCase]
+
   // Loop through inputCase array and sort cases by priority
   for (let i of parsedInputCase) {
     if (priority.first.includes(i)){
@@ -41,5 +58,5 @@ const makeCase = (input, inputCase) => {
   console.log(order);
 }
 
-makeCase("this is a string", ["camel", "snake", "upper", "vowel", "lower", "consonant", "title"]);
+// makeCase("this is a string", ["camel", "snake", "upper", "vowel", "lower", "consonant", "title"]);
 
