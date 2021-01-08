@@ -26,7 +26,20 @@ const pascalCase = function(input) {
   return result.replace(result[0], result[0].toUpperCase())
 }
 
-console.log(pascalCase("this is a string"));
+const snakeCase = function(input) {
+  return input.replace(/ /g, "_");
+}
+
+const kebabCase = function(input) {
+  return input.replace(/ /g, "-");
+}
+
+console.log(snakeCase("this is a string"));
+console.log(kebabCase("this is a string"));
+
+
+
+
 
 const makeCase = (input, inputCase) => {
   let result = "";
