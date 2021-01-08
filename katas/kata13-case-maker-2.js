@@ -1,4 +1,3 @@
-
 const camelCase = function(input) {
   let result = "";
   for (let i = 0; i < input.length; i++){
@@ -81,8 +80,6 @@ const lowerCase = input => {
 }
 
 
-
-
 const makeCase = (input, inputCase) => {
   let result = input;
   // Priority of cases
@@ -146,7 +143,6 @@ const makeCase = (input, inputCase) => {
       }
     })
   }
-
   return result;
 }
 
