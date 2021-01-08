@@ -72,7 +72,13 @@ const consonantCase = input => {
   return result;
 }
 
-console.log(consonantCase("this is a string"));
+const upperCase = input => {
+  return input.toUpperCase();
+}
+
+const lowerCase = input => {
+  return input.toLowerCase();
+}
 
 
 
