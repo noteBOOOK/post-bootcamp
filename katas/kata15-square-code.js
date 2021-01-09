@@ -14,15 +14,17 @@ const squareCode = function(message) {
     }
     line += string[i];
   }
+  // Add remaining characters
   resultArray.push(line);
 
   for (let i = 0; i < resultArray[0].length; i++) {
-
     for (let j = 0; j < resultArray.length; j++) {
       
-      if (resultArray[j].length > i){
+      // Prevents "undefined" from being added if character length is less than number of columns
+      if (resultArray[j].length > i) {
         result += resultArray[j][i];
       }
+
     }
     result += " ";
   }
