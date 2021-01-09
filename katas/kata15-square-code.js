@@ -16,7 +16,15 @@ const squareCode = function(message) {
   }
   resultArray.push(line);
 
-  return resultArray;
+  for (let i = 0; i < resultArray[0].length; i++) {
+
+    for (let j = 0; j < resultArray.length; j++) {
+      result += resultArray[j][i];
+    }
+    result += " ";
+  }
+
+  return result;
 };
 
 console.log(squareCode("chill out"));
