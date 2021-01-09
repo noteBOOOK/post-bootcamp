@@ -2,17 +2,21 @@ const squareCode = function(message) {
 
   let result = "";
   let resultArray = [];
+  let line = "";
+
   const string = message.split(" ").join("");
   const square = Math.ceil(Math.sqrt(string.length));
 
   for (let i = 0; i < string.length; i++) {
-    if (i % square === 0) {
-      result += " ";
+    if (line.length === square) {
+      resultArray.push(line);
+      line = "";
     }
-    result += string[i];
+    line += string[i];
   }
+  resultArray.push(line);
 
-  return result;
+  return resultArray;
 };
 
 console.log(squareCode("chill out"));
