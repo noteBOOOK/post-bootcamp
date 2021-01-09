@@ -1,11 +1,18 @@
 const squareCode = function(message) {
 
   let result = "";
-  const string = message.split(" ");
-  const stringLength = string.join("").length;
-  const square = Math.ceil(Math.sqrt(stringLength));
+  let resultArray = [];
+  const string = message.split(" ").join("");
+  const square = Math.ceil(Math.sqrt(string.length));
 
-  return square;
+  for (let i = 0; i < string.length; i++) {
+    if (i % square === 0) {
+      result += " ";
+    }
+    result += string[i];
+  }
+
+  return result;
 };
 
 console.log(squareCode("chill out"));
@@ -14,6 +21,8 @@ console.log(squareCode("chill out"));
 chi
 llo
 ut
+
+chi llo ut
 
 clu
 hlt
