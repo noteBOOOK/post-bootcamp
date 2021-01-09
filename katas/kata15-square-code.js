@@ -19,7 +19,10 @@ const squareCode = function(message) {
   for (let i = 0; i < resultArray[0].length; i++) {
 
     for (let j = 0; j < resultArray.length; j++) {
-      result += resultArray[j][i];
+      
+      if (resultArray[j].length > i){
+        result += resultArray[j][i];
+      }
     }
     result += " ";
   }
@@ -28,18 +31,6 @@ const squareCode = function(message) {
 };
 
 console.log(squareCode("chill out"));
-
-/*
-chi
-llo
-ut
-
-chi llo ut
-
-clu
-hlt
-io
-
-clu hlt io
-
-*/
+console.log(squareCode("feed the dog"));
+console.log(squareCode("have a nice day"));
+console.log(squareCode("if man was meant to stay on the ground god would have given us roots"));
