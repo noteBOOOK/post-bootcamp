@@ -1,5 +1,5 @@
-let whiteQueen = [6, 3];
-let blackQueen = [4, 5];
+let whiteQueen = [0, 5];
+let blackQueen = [5, 0];
 
 const generateBoard = (whiteQueen, blackQueen) => {
   let result = [];
@@ -15,7 +15,6 @@ let generatedBoard = generateBoard(whiteQueen, blackQueen);
 
 const queenThreat = filledBoard => {
   let queenPositions = [];
-  let threat;
 
   // Finds the position of queens on the board
   for (let i = 0; i < 8; i++) {
@@ -31,18 +30,14 @@ const queenThreat = filledBoard => {
   // Determine if threat is true
   // Horizontal and Vertical threat
   if (queenPositions[0][0] === queenPositions[1][0] || queenPositions[0][1] === queenPositions[1][1]) {
-    threat = true;
+    return true;
   // Diagonal threat
   // Math.abs to turn into true value, comparison between negative and positive number caused a bug
   } else if (Math.abs(queenPositions[0][0] - queenPositions[1][0]) === Math.abs(queenPositions[0][1] - queenPositions[1][1])) {
-    threat = true;
+    return true;
   } else {
-    threat = false;
+    return false;
   }
-
-
-  // console.log(queenPositions[0][0] - queenPositions[1][0]);
-  return threat;
 };
 
 console.log(generatedBoard);
