@@ -15,7 +15,9 @@ let generatedBoard = generateBoard(whiteQueen, blackQueen);
 
 const queenThreat = filledBoard => {
   let queenPositions = [];
+  let threat;
 
+  // Finds the position of queens on the board
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
 
@@ -25,6 +27,15 @@ const queenThreat = filledBoard => {
 
     }
   }
+
+  // Determine if threat is true
+  // Horizontal and Vertical threat
+  if (queenPositions[0][0] === queenPositions[1][0] || queenPositions[0][1] === queenPositions[1][1]) {
+    threat = true;
+  } /* else if () */
+
+
+
   return queenPositions;
 };
 
