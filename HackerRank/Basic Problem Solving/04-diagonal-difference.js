@@ -48,7 +48,7 @@ const diagonalDifference = arr => {
     counter++;
   }
 
-  counter = 2;
+  counter = arr.length - 1;
   for (let row of arr) {
     result2 += row[counter];
     counter--;
