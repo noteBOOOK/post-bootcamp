@@ -68,12 +68,12 @@ const plusMinus = arr => {
   })
 
   const result = {
-    positive: counter.positive / length,
-    negative: counter.negative / length,
-    zero: counter.zero / length
+    positive: (counter.positive / length).toFixed(6),
+    negative: (counter.negative / length).toFixed(6),
+    zero: (counter.zero / length).toFixed(6)
   };
 
-  return result;
+  return `${result.positive}\n${result.negative}\n${result.zero}`;
 
 
 }
