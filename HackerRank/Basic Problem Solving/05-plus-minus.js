@@ -55,6 +55,7 @@ const plusMinus = arr => {
     negative: 0,
     zero: 0
   };
+  let length = arr.length;
 
   arr.forEach(number => {
     if (number === 0) {
@@ -66,7 +67,13 @@ const plusMinus = arr => {
     }
   })
 
-  return `${counter.positive / arr.length} \n ${counter.negative / arr.length} \n ${counter.zero / arr.length}`;
+  const result = {
+    positive: counter.positive / length,
+    negative: counter.negative / length,
+    zero: counter.zero / length
+  };
+
+  return result;
 
 
 }
