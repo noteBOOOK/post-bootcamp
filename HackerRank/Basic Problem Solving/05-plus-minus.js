@@ -47,7 +47,7 @@
 
 ///////////////////////
 
-const inputData = [-4, 3, -9, 0, 4, 1];
+const inputData = [1, 2, 3, -1, -2, -3, 0, 0];
 
 const plusMinus = arr => {
   const counter = {
@@ -74,6 +74,11 @@ const plusMinus = arr => {
   };
 
   return `${result.positive}\n${result.negative}\n${result.zero}`;
+
+  // HackerRank challenge required answers to be displayed using console.log
+  // console.log(result.positive);
+  // console.log(result.negative);
+  // console.log(result.zero);
 
 
 }
