@@ -1,17 +1,22 @@
 const inputData = [3, 1, 5, 9, 7];
 
 const miniMaxSum = arr => {
-  let sum1 = 0;
-  let sum2 = 0;
+  let min = 0;
+  let max = 0;
+
+  // Sort the input array in ascending format
   arr.sort((a, b) => a - b);
+
+  // Min sum will be first 4 numbers
   for (let i = 0; i < arr.length - 1; i++) {
-    sum1 += arr[i];
+    min += arr[i];
   }
 
+  // Max sum will be last 4 numbers
   for (let i = arr.length - 1; i > 0; i--) {
-    sum2 += arr[i];
+    max += arr[i];
   }
-  console.log(sum1, sum2);
+  console.log(min, max);
 };
 
 miniMaxSum(inputData);
