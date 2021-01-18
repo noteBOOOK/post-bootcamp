@@ -1,17 +1,16 @@
 const data = [73, 67, 38, 33];
 
 const gradingStudents = grades => {
-  const results = [];
 
-  grades.map(grade => {
+  return grades.map(grade => {
+    // Get the difference from 5 through mod operator
     const difference = 5 - (grade % 5);
-
+    
     if (difference < 3 && grade >= 38) {
       grade += difference;
     }
-    console.log(grade);
+    return grade;
   })
-
 };
 
-gradingStudents(data);
+console.log(gradingStudents(data));
